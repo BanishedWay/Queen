@@ -5,11 +5,6 @@ int x[9];
 int isPlace(int k);
 void queen(int n);
 
-int main()
-{
-	queen(8);
-	return 0;
-}
 
 int Place(int k)
 {

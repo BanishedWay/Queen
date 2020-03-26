@@ -1,6 +1,18 @@
 #include<stdio.h>
+int a[10];
+int FABS(int x, int y);
 
-int isPlace(int k, int a[])
+void Queen(int n);
+
+int isPlace(int k);
+
+int main()
+{
+	Queen(8);
+	return 0;
+}
+
+int isPlace(int k)
 {
 	int i, flag = 1;
 	for (i = 1; i < k; i++)
@@ -23,7 +35,35 @@ int FABS(int x, int y)
 	return -t;
 }
 
-void queen(int n, int a[])
+void Queen(int n)
 {
-
+	int i, k = 1;
+	a[k] = 0;
+	while (k > 0)
+	{
+		a[k]++;
+		while (a[k] <= n && !isPlace(k))
+		{
+			a[k]++;
+		}
+		if (a[k] <= n)
+		{
+			if (k == n)
+			{
+				for (i = 1; i < n; i++)
+				{
+					printf("%d ", a[i]);
+				}
+				printf("%d\n", a[i]);
+			}
+			else
+			{
+				k++;
+				a[k] = 0;
+			}
+		}
+		else
+			k--;
+	}
+	return;
 }
